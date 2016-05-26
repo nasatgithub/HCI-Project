@@ -13,13 +13,21 @@
 
     function ProfileController($routeParams) {
         var vm = this;
+        vm.updateUser = updateUser;
 
         var id = $routeParams.id;
-
+        var index = -1;
         for(var i in users) {
             if(users[i]._id === id) {
                 vm.user = users[i];
+                index = i;
             }
+        }
+
+        function updateUser(newUser) {
+            console.log(newUser);
+            users[index].firstName = newUser.firstName;
+            users[index].lastName = newUser.lastName;
         }
     }
 
@@ -27,9 +35,12 @@
         var vm = this;
 
         vm.login = function(username, password) {
+            var currentUser = null;
             for(var i in users) {
                 if(users[i].username === username && users[i].password === password) {
+                    currentUser = users[i];
                     $location.url("/profile/"+users[i]._id);
+                    break;
                 } else {
                     vm.error = "User not found";
                 }
