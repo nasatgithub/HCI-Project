@@ -11,6 +11,8 @@
 
         function init() {
             vm.widgets = WidgetService.findWidgetsForPageId(pageId);
+            $(".container")
+                .sortable({axis: "y"});
         }
         init();
 
@@ -23,7 +25,6 @@
             var id = urlParts[urlParts.length - 1];
             var url = "https://www.youtube.com/embed/" + id;
             return $sce.trustAsResourceUrl(url);
-
         }
     }
 })();
