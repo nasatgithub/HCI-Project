@@ -12,13 +12,18 @@
         { "_id": "789", "name": "Chess",       "developerId": "234" }
     ];
 
-    function WebsiteService() {
+    function WebsiteService($http) {
         var api = {
             createWebsite: createWebsite,
             findWebsitesForUserId: findWebsitesForUserId,
+            findWebsiteById: findWebsiteById,
             deleteWebsite: deleteWebsite
         };
         return api;
+
+        function findWebsiteById(websiteId) {
+            return $http.get("/api/website/"+websiteId);
+        }
 
         function deleteWebsite(websiteId) {
             for(var i in websites) {
@@ -30,25 +35,31 @@
             return false;
         }
         
-        function createWebsite(developerId, name, desc) {
-            var newWebsite = {
-                _id: (new Date()).getTime()+"",
+        function createWebsite(userId, name, desc) {
+            var website = {
                 name: name,
-                description: desc,
-                developerId: developerId
+                description: desc
             };
-            websites.push(newWebsite);
-            return newWebsite;
+            return $http.post("/api/user/"+userId+"/website", website);
+            // var newWebsite = {
+            //     _id: (new Date()).getTime()+"",
+            //     name: name,
+            //     description: desc,
+            //     developerId: developerId
+            // };
+            // websites.push(newWebsite);
+            // return newWebsite;
         }
 
         function findWebsitesForUserId(userId) {
-            var resultSet = [];
-            for(var i in websites) {
-                if(websites[i].developerId === userId) {
-                    resultSet.push(websites[i]);
-                }
-            }
-            return resultSet;
+            return $http.get("/api/user/"+userId+"/website");
+            // var resultSet = [];
+            // for(var i in websites) {
+            //     if(websites[i].developerId === userId) {
+            //         resultSet.push(websites[i]);
+            //     }
+            // }
+            // return resultSet;
         }
     }
 })();

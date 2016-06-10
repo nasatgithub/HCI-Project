@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ExperimentsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/jquery-ui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="css/textAngular.css" rel="stylesheet"/>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/textAngular-rangy.min.js"></script>
+    <script src="js/textAngular-sanitize.min.js"></script>
+    <script src="js/textAngular.min.js"></script>
+    <!--<script src="js/textAngularSetup.js"></script>-->
+    <script src="directives/jga-directive.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="ExperimentsController as model">
+        <div jga-draggable box="model.box1">
+            {{model.box1}}
+        </div>
+
+        <div class="input-group">
+            <input ng-model="todo.title" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <a ng-click="model.createTodo(todo)" class="btn btn-default">Create</a>
+            </span>
+        </div>
+
+        <ul wam-sortable wam-callback="model.sort(start, end)">
+            <li ng-repeat="todo in model.todos">
+                {{todo.title}}
+            </li>
+        </ul>
+        {{model.todos}}
+        <div text-angular
+             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],['ul','ol'], ['justifyLeft','justifyCenter','justifyRight','justifyFull'],['indent','outdent'],['html']]"
+             ng-model="model.html">
+        </div>
+        {{model.html}}
+        <div ng-bind-html="model.html"></div>
+    </div>
+</body>
+</html>

@@ -8,6 +8,9 @@
             .when("/", {
                 templateUrl: "views/home.html"
             })
+            .when("/html", {
+                templateUrl: "views/widget/widget-html-edit.view.client.html"
+            })
             .when("/flickr", {
                 templateUrl: "views/widget/widget-flickr-search.view.client.html",
                 controller: "FlickrImageSearchController",

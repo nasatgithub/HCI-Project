@@ -13,7 +13,8 @@ app.use(express.static(__dirname + '/public'));
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
 var port      = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-var assignment = require("./assignment/app.js");
-assignment(app);
+require("./assignment/app.js")(app);
+// require("./experiments/app.js")(app);
+require("./experiments/todos.js")(app);
 
 app.listen(port, ipaddress);
