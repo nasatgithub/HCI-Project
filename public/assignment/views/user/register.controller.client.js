@@ -10,13 +10,18 @@
 
         function register(username, password, password2) {
             UserService
-                .createUser(username, password)
-                .then(function(response){
-                    var user = response.data;
-                    if(user) {
-                        $location.url("/profile/"+user._id);
+                .register(username, password)
+                .then(
+                    function(response){
+                        var user = response.data;
+                        if(user) {
+                            $location.url("/profile/"+user._id);
+                        }
+                    },
+                    function(err) {
+                        vm.error = err;
                     }
-                });
+                );
         }
     }
 })();
