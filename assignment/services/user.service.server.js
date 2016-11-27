@@ -14,11 +14,12 @@ module.exports = function(app, models) {
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
 
-    app.get("/auth/facebook", passport.authenticate('facebook'));
+/*    app.get("/auth/facebook", passport.authenticate('facebook'));
     app.get("/auth/facebook/callback", passport.authenticate('facebook', {
         successRedirect: '/assignment/#/profile',
         failureRedirect: '/assignment/#/login'
-    }));
+    }));*/
+
     app.post("/api/user", createUser);
     app.get("/api/loggedIn", loggedIn);
     app.post("/api/register", register);
@@ -39,7 +40,7 @@ module.exports = function(app, models) {
         callbackURL  : process.env.FACEBOOK_CALLBACK_URL
     }
 
-   passport.use('facebook', new FacebookStrategy(facebookConfig, facebookLogin));
+   //passport.use('facebook', new FacebookStrategy(facebookConfig, facebookLogin));
 
     function localStrategy(username, password, done) {
         userModel

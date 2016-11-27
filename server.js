@@ -25,6 +25,8 @@ var port      = process.env.PORT || 3000;
 
 require("./assignment/app.js")(app);
 // require("./experiments/app.js")(app);
-require("./experiments/todos.js")(app);
+//require("./experiments/todos.js")(app);
 
 app.listen(port, ipaddress);
+
+console.log("server started!!");
