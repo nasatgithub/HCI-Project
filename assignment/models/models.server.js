@@ -2,7 +2,7 @@
 module.exports = function() {
 
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/cs5610summer1');
+    mongoose.connect('mongodb://heroku_zxlnj7ct:ka422ep0r77ohecgtehdhosfii@ds111798.mlab.com:11798/heroku_zxlnj7ct');
 
     var models = {
         userModel: require("./user/user.model.server")(),
