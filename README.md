@@ -1,4 +1,4 @@
-# web-dev-template
+# hci-findhome
 
 1. git clone https://github.com/nasatgithub/HCI-Project.git
 1. cd web-dev-template
