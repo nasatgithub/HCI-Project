@@ -9,21 +9,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>FindMyHome</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900|Exo:900" rel="stylesheet">
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,12 +33,14 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/findhome.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
+    <link rel="stylesheet" type='text/css'  href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type='text/css'  href="https://cdn.datatables.net/rowreorder/1.1.2/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" type='text/css'  href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 
 
 
@@ -52,23 +55,23 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand page-scroll" href="#page-top">FindMyHome</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="" href="#about">About</a>
+                    <a class="page-scroll" href="#about">About</a>
                 </li>
                 <li>
-                    <a class="" href="#services">Services</a>
+                    <a class="page-scroll" href="#services">Services</a>
                 </li>
                 <li>
-                    <a class="" href="#portfolio">Portfolio</a>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
                 </li>
                 <li>
-                    <a class="" href="#contact">Contact</a>
+                    <a class="page-scroll" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -88,12 +91,15 @@
     </div>
 </header>-->
 
-<section class="" id="qa">
+
+<section class="qtable-section" id="qa">
     <div class="container">
+        <h3 class="section-heading text-center" id="homeHeading">Question and Answers Forum</h3>
+        <hr>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center ">
+            <div class="col-lg-12  ">
                 <div>
-                    <table id="example" class="table table-hover" cellspacing="0" width="100%">
+                    <table id="qatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                         <tr>
                             <th class = "text-center">Posted By</th>
@@ -196,7 +202,11 @@
 
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -209,6 +219,11 @@
 <!-- Theme JavaScript -->
 <script src="js/creative.min.js"></script>
 <script src="QA.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/rowreorder/1.1.2/js/dataTables.rowReorder.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
 
 </body>
 
