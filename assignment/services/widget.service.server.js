@@ -48,6 +48,6 @@ module.exports = function (app) {
             }
         }
 
-        res.redirect("/assignment/#/user/:uid/website/:wid/page/:pid/widget/" + widgetId);
+        res.redirect("/project/#/user/:uid/website/:wid/page/:pid/widget/" + widgetId);
     }
 }

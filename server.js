@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 var ipaddress = process.env.IP;
 var port      = process.env.PORT || 3000;
 
-//require("./assignment/app.js")(app);
+//require("./project/app.js")(app);
 // require("./experiments/app.js")(app);
 //require("./experiments/todos.js")(app);
 

@@ -6,10 +6,10 @@
     function Config($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "views/home.html"
+                templateUrl: "views/guest/guestPage.html"
             })
-            .when("/html", {
-                templateUrl: "views/widget/widget-html-edit.view.client.html"
+            .when("/qna/:uid", {
+                templateUrl: "views/qna/QASession.html"
             })
             .when("/flickr", {
                 templateUrl: "views/widget/widget-flickr-search.view.client.html",

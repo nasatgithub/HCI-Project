@@ -14,7 +14,7 @@ module.exports = function() {
         lastName: String,
         dob: Date,
         dateCreated: {type: Date, default: Date.now}
-    }, {collection: "assignment.user"});
+    }, {collection: "project.user"});
 
     return UserSchema;
 };

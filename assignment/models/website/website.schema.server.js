@@ -10,7 +10,7 @@ module.exports = function() {
         description: String,
         dateCreated: {type: Date, default: Date.now},
         pages: [PageSchema]
-    }, {collection: "assignment.website"});
+    }, {collection: "project.website"});
 
     return WebsiteSchema;
 };
