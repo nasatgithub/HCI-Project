@@ -58,9 +58,9 @@
         <div class="row">
 
             <div class="input-group">
-                <input type="text" id="qasked" class="form-control" placeholder="Enter New Question ...">
+                <input type="text" id="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ...">
                 <span class="input-group-btn">
-                <button id="ask_question" class="btn btn-secondary" type="button">Ask Question</button>
+                <button id="ask_question" class="btn btn-secondary" type="button" ng-click="model.addQuestion()">Ask Question</button>
               </span>
             </div>
             <br/>
@@ -88,7 +88,16 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
+                        <tr ng-repeat="question in model.questions">
+                            <td>{{question.postedBy}}</td>
+                            <td>{{question.text}}</td>
+                            <td>{{question.tags}}</td>
+                            <td>{{question.noOfAnswers}}</td>
+                            <td>20</td>
+                        </tr>
+
+
+                        <!--<tr >
                             <td>Tiger Nixon</td>
                             <td>How much house should I buy? How much can I afford?</td>
                             <td>Money</td>
@@ -150,7 +159,7 @@
                             <td>Appraisal</td>
                             <td>5</td>
                             <td>24</td>
-                        </tr>
+                        </tr>-->
                         </tbody>
                     </table>
                 </div>

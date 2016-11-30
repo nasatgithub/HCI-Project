@@ -9,7 +9,9 @@
                 templateUrl: "views/guest/guestPage.html"
             })
             .when("/qna/:uid", {
-                templateUrl: "views/qna/QASession.html"
+                templateUrl: "views/qna/questions-list.view.client.html",
+                controller: "QuestionListController",
+                controllerAs: "model"
             })
             .when("/flickr", {
                 templateUrl: "views/widget/widget-flickr-search.view.client.html",
