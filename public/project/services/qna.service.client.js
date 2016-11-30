@@ -17,14 +17,21 @@
             findWebsitesForUserId: findWebsitesForUserId,
             findWebsiteById: findWebsiteById,
             deleteWebsite: deleteWebsite,
-            findAllQuestions: findAllQuestions
+            findAllQuestions: findAllQuestions,
+            addQuestion: addQuestionToArr
         };
         return api;
 
         function findAllQuestions() {
             return questions;
         }
-        
+
+        function addQuestionToArr(questionText) {
+            newQ = {"_id": "444", "text": questionText,"tags": "Name","postedBy": "Me", "noOfAnswers":0};
+
+            questions.push(newQ);
+            console.log("qcoun" + questionText + " "+ questions.length);
+        }
 
         function findWebsiteById(websiteId) {
             return $http.get("/api/website/"+websiteId);
