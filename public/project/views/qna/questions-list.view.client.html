@@ -26,12 +26,9 @@
                 <li>
                     <a class="page-scroll" href="#services">Services</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
-                </li>
-                <li>
+               <!-- <li>
                     <a class="page-scroll" href="#contact">Contact</a>
-                </li>
+                </li>-->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -90,10 +87,10 @@
                         <tbody>
                         <tr ng-repeat="question in model.questions">
                             <td>{{question.postedBy}}</td>
-                            <td><a href="/QADisplay/QADisplay.html">{{question.text}}</a></td>
+                            <td><a href="/QADisplay/{{question.answerURL}}">{{question.text}}</a></td>
                             <td>{{question.tags}}</td>
                             <td>{{question.noOfAnswers}}</td>
-                            <td>20</td>
+                            <td>15</td>
                         </tr>
 
 

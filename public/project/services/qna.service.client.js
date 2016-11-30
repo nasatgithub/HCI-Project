@@ -7,8 +7,18 @@
         .factory("QnaService", QnaService);
 
     var questions = [
-        { "_id": "123", "text": "What is your name?","tags": "Name","postedBy": "Me", "noOfAnswers":3},
-        { "_id": "111", "text": "How are you?","tags": "Well","postedBy": "You", "noOfAnswers":6}
+        { "_id": "123",
+            "text": "How much house should I buy? How much can I afford?",
+            "tags": "Money","postedBy": "Rock",
+            "noOfAnswers":2,
+            "answerURL": "QADisplay.html"},
+
+        { "_id": "111",
+            "text": "How much will my closing costs be?",
+            "tags": "Money",
+            "postedBy": "Peter",
+            "noOfAnswers":2,
+            "answerURL": "QADisplay2.html"}
     ];
 
     function QnaService($http) {
