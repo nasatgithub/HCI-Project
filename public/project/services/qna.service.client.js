@@ -28,9 +28,7 @@
 
         function addQuestionToArr(questionText) {
             newQ = {"_id": "444", "text": questionText,"tags": "Name","postedBy": "Me", "noOfAnswers":0};
-
             questions.push(newQ);
-            console.log("qcoun" + questionText + " "+ questions.length);
         }
 
         function findWebsiteById(websiteId) {

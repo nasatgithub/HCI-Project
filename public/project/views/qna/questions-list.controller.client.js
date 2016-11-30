@@ -18,7 +18,6 @@
 
 
         function addQuestion() {
-            alert("Question :" + vm.newQuestion);
             QnaService.addQuestion(vm.newQuestion);
             vm.newQuestion="";
             init();
