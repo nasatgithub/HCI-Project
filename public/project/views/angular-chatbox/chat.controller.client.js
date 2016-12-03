@@ -20,9 +20,9 @@
         // Receive Messages
         // Push to Message Inbox.
         // - - - - - - - - - - - - - - - - - -
-        Messages.receive(function (message) {
+     /*   Messages.receive(function (message) {
             vm.messages.push(message);
-        });
+        });*/
 
         // - - - - - - - - - - - - - - - - - -
         // Send Message
@@ -32,9 +32,16 @@
         // ng-model="textbox".
         // - - - - - - - - - - - - - - - - - -
 
-        vm.send = function () {
+     /*   vm.send = function () {
             Messages.user({name:$routeParams.uid});
-            Messages.send({data: vm.textbox, to: 'abc'});
+            Messages.send({data: vm.textbox});
+        }*/
+
+        vm.send = function () {
+            vm.messages.push({data:vm.textbox, self:true, user:{name:$routeParams.uid}});
+            vm.messages.push({data:"Hello", self:false, user:{name:"home assistant"}});
         }
+
+
     }
 })();

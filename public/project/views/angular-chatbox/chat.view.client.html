@@ -1,3 +1,4 @@
+<!--
 <div ng-repeat="message in model.messages">
         {{ message.user.name }}:
         {{ message.data }}
@@ -6,3 +7,37 @@
     <input ng-model="model.textbox">
     <input type="submit" value="send">
 </form>
+-->
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- Chat Messages -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<link href="css/chat-style.css" rel="stylesheet">
+
+
+<div class="chat-container">
+    <div class="chat-messages">
+        <div class="chat-header">
+            <div class="angularjs-chat-logo"><i class="fa fa-users fa-3x" aria-hidden="true"></i></div>
+            Group Chat
+        </div>
+        <div ng-repeat="message in model.messages">
+            <div class="sent-message-{{ message.self }}">
+                <span class="username">{{ message.user.name }}:</span>
+                {{ message.data }}
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- User Input -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <form ng-submit="model.send()" class="chat-input">
+        <input type="text" ng-model="model.textbox" autofocus>
+        <input type="submit" class="send-icon" value=" ">
+        <input type="submit" value=" "
+               class="sent-indicator {{ model.status }}">
+    </form>
+</div>
