@@ -34,7 +34,7 @@
 
         vm.send = function () {
             Messages.user({name:$routeParams.uid});
-            Messages.send({data: vm.textbox});
+            Messages.send({data: vm.textbox, to: 'abc'});
         }
     }
 })();
