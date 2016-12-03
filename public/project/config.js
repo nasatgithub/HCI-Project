@@ -13,6 +13,11 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
+            .when("/qna/:uid/chat", {
+                templateUrl: "views/angular-chatbox/chat.view.client.html",
+                controller: "ChatController",
+                controllerAs: "model"
+            })
             .when("/flickr", {
                 templateUrl: "views/widget/widget-flickr-search.view.client.html",
                 controller: "FlickrImageSearchController",

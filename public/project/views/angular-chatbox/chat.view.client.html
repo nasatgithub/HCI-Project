@@ -1,0 +1,8 @@
+<div ng-repeat="message in model.messages">
+        {{ message.user.name }}:
+        {{ message.data }}
+</div>
+<form ng-submit="model.send()">
+    <input ng-model="model.textbox">
+    <input type="submit" value="send">
+</form>
