@@ -1,23 +1,24 @@
 (function(){
     angular
         .module("WebAppMaker")
-        .controller("ProfileController", ProfileController);
+        .controller("UserPageController", UserPageController);
 
-    function ProfileController($location, $routeParams, UserService, $rootScope) {
+    function UserPageController($location, $routeParams, UserService, $rootScope) {
         var vm = this;
         vm.updateUser = updateUser;
         vm.unregister = unregister;
         vm.logout = logout;
 
-        var id = $rootScope.currentUser._id;
+        var username = $routeParams.uName;
 
         function init() {
             UserService
-                .findUserById(id)
+                .findUserByUsername(username)
                 .then(function(response){
                     vm.user = response.data;
                 });
         }
+        
         init();
 
         function logout() {

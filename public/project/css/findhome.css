@@ -76,6 +76,10 @@ aside {
   font-weight: 700;
   text-transform: full-size-kana;
 }
+.page-name {
+ margin-left: -20px;
+}
+
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
   color: #eb3812;
@@ -114,6 +118,11 @@ aside {
   .navbar-default .navbar-header .navbar-brand {
     color: #F05F40;
   }
+
+  .navbar-default .navbar-header .navbar-brand .page-name {
+    margin-left: -5px;
+  }
+
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
     color: rgb(250, 171, 7);

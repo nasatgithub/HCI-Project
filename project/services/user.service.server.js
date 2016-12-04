@@ -9,7 +9,7 @@ module.exports = function(app, models) {
 
     var users = [
         {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-        {_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
+        {_id: "234", username: "bob",      password: "bob",      firstName: "Bobby",    lastName: "Marley"  },
         {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
         {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
     ];
@@ -21,135 +21,23 @@ module.exports = function(app, models) {
     }));*/
 
     app.post("/api/user", createUser);
-    app.get("/api/loggedIn", loggedIn);
     app.post("/api/register", register);
     app.post("/api/logout", logout);
-    app.post("/api/login", passport.authenticate('local'), login);
+    app.post("/api/login", login);
     app.get("/api/user", getUsers);
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
 
-    passport.use(new LocalStrategy(localStrategy));
-    passport.serializeUser(serializeUser);
-    passport.deserializeUser(deserializeUser);
 
-    var facebookConfig = {
-        clientID     : process.env.FACEBOOK_CLIENT_ID,
-        clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
-        callbackURL  : process.env.FACEBOOK_CALLBACK_URL
-    }
 
-   //passport.use('facebook', new FacebookStrategy(facebookConfig, facebookLogin));
-
-    function localStrategy(username, password, done) {
-        userModel
-            .findUserByUsername(username)
-            .then(
-                function (user) {
-                    if(user && bcrypt.compareSync(password, user.password)) {
-                        done(null, user);
-                    } else {
-                        done(null, false);
-                    }
-                },
-                function(err) {
-                    done(err);
-                }
-            );
-    }
-
-    function serializeUser(user, done) {
-        done(null, user);
-    }
-
-    function deserializeUser(user, done) {
-        userModel
-            .findUserById(user._id)
-            .then(
-                function(user){
-                    done(null, user);
-                },
-                function(err){
-                    done(err, null);
-                }
-            );
-    }
-
-    function facebookLogin(token, refreshToken, profile, done) {
-        console.log(profile);
-        userModel
-            .findFacebookUser(profile.id)
-            .then(
-                function(facebookUser) {
-                    if(facebookUser) {
-                        return done(null, facebookUser);
-                    } else {
-                        facebookUser = {
-                            username: profile.displayName.replace(/ /g,''),
-                            facebook: {
-                                token: token,
-                                id: profile.id,
-                                displayName: profile.displayName
-                            }
-                        };
-                        userModel
-                            .createUser(facebookUser)
-                            .then(
-                                function(user) {
-                                    done(null, user);
-                                }
-                            );
-                    }
-                }
-            );
-    }
-
-    function loggedIn(req, res) {
-        if(req.isAuthenticated()) {
-            res.json(req.user);
-        } else {
-            res.send('0');
-        }
-    }
 
     function register(req, res) {
         var username = req.body.username;
         var password = req.body.password;
+        var email = req.body.email;
 
-        userModel
-            .findUserByUsername(username)
-            .then(
-                function(user) {
-                    if(user) {
-                        res.status(400).send("Username already in use");
-                        return;
-                    } else {
-                        req.body.password = bcrypt.hashSync(req.body.password);
-                        return userModel
-                            .createUser(req.body);
-                    }
-                },
-                function(err) {
-                    res.status(400).send(err);
-                }
-            )
-            .then(
-                function(user) {
-                    if(user) {
-                        req.login(user, function(err) {
-                            if(err) {
-                                res.status(400).send(err);
-                            } else {
-                                res.json(user);
-                            }
-                        })
-                    }
-                },
-                function(err) {
-                    res.status(400).send(err);
-                }
-            )
+        findUserByUsername(username, res)
     }
 
     function logout(req, res) {
@@ -158,8 +46,17 @@ module.exports = function(app, models) {
     }
 
     function login(req, res) {
-        var user = req.user;
-        res.json(user);
+        var user = req.body;
+
+        for(var i in users) {
+            if(users[i].username === user.username && users[i].password === user.password ) {
+                res.send(users[i]);
+                return;
+            }
+        }
+
+        res.status(404).send({msg: "username/password incorrect"});
+
     }
 
     function deleteUser(req, res) {

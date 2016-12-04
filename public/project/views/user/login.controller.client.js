@@ -10,14 +10,19 @@
             UserService
                 .login(username, password)
                 .then(function(response){
-                    console.log(response);
-                    var user = response.data;
-                    if(user._id) {
-                        $location.url("/profile");
-                    } else {
-                        vm.error = "User not found";
-                    }
-            });
+                        console.log(response);
+                        var user = response.data;
+                        if(user.username) {
+                            $location.url("/home/"+user.username);
+                        } else {
+                            vm.error = "User not found";
+                            alert("user not found");
+                        }
+                    },
+                    function (error) {
+                        console.log(error.data.msg);
+                        vm.error = error.data.msg;
+                    });
         }
     }
 })();

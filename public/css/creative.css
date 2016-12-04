@@ -75,6 +75,10 @@ aside {
   font-weight: 700;
   text-transform: uppercase;
 }
+.navbar-default .navbar-header .navbar-back {
+  color: #F05F40;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
   color: #eb3812;

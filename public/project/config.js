@@ -8,6 +8,11 @@
             .when("/", {
                 templateUrl: "views/guest/guestPage.html"
             })
+            .when("/home/:uName", {
+                templateUrl: "views/user/userPage.html",
+                controller: "UserPageController",
+                controllerAs: "model"
+            })
             .when("/qna/:uid", {
                 templateUrl: "views/qna/questions-list.view.client.html",
                 controller: "QuestionListController",
