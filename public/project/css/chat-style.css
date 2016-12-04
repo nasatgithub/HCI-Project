@@ -6,7 +6,7 @@ html, body, strong, button, small, input, p, div, h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.4em;
     font-weight: 400;
     font-size: 16px;
@@ -26,7 +26,7 @@ div.chat-container {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0;
+    top: 40px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -35,9 +35,9 @@ div.chat-container {
 div.chat-messages {
     order: 1;
     flex: 1;
-    overflow: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
 }
 form.chat-input {
     position: relative;
@@ -105,7 +105,7 @@ div.sent-message-true {
     padding: 14px;
     font-size: 0.8em;
     font-weight: 400;
-    background: rgba(233,234,243,1.0);
+    background: rgb(185, 206, 121);
     animation: sent-message 0.9s ease-out 0s;
 }
 span.username {
@@ -122,20 +122,32 @@ span.username {
     100% { transform: translate(0px,0px);                       opacity: 1 }
 }
 @keyframes sent-message {
-    0%   { color: rgba(32,40,70,0.9);    transform: translate(100px,50px); opacity: 0 }
+   /* 0%   { color: rgba(32,40,70,0.9);    transform: translate(100px,50px); opacity: 0 }
     42%  { color: rgba(32,40,70,0.9);    transform: translate(80px,40px);  opacity: 0.8 }
     60%  { color: rgba(144,134,251,0.3); transform: translate(-3px,-7px);  opacity: 1 }
     80%  { color: rgba(32,40,70,0.5);    transform: translate(2px,3px);    opacity: 1 }
     90%  { color: rgba(32,40,70,0.7);    transform: translate(-1px,-2px);  opacity: 1 }
-    100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }
+    100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }*/
+    0%   { color: rgba(32,40,70,0.9);     opacity: 0 }
+    42%  { color: rgba(32,40,70,0.9);    opacity: 0.8 }
+    60%  { color: rgba(250, 171, 7, 0.77);   opacity: 1 }
+    80%  { color: rgba(32,40,70,0.5);      opacity: 1 }
+    90%  { color: rgba(32,40,70,0.7);     opacity: 1 }
+    100% { color: rgba(32,40,70,0.9);      opacity: 1 }
 }
 @keyframes received-message {
-    0%   { color: rgba(32,40,70,0.9);    transform: translate(-100px,0px); opacity: 0 }
+/*    0%   { color: rgba(32,40,70,0.9);    transform: translate(-100px,0px); opacity: 0 }
     42%  { color: rgba(32,40,70,0.9);    transform: translate(-80px,0px);  opacity: 0.8 }
     60%  { color: rgba(122,214,184,0.9); transform: translate(3px,0px);  opacity: 1 }
     80%  { color: rgba(32,40,70,0.6);    transform: translate(-2px,0px);    opacity: 1 }
     90%  { color: rgba(32,40,70,0.8);    transform: translate(1px,0px);  opacity: 1 }
-    100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }
+    100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }*/
+    0%   { color: rgba(32,40,70,0.9);    opacity: 0 }
+    42%  { color: rgba(32,40,70,0.9);     opacity: 0.8 }
+    60%  { color: rgba(122,214,184,0.9);   opacity: 1 }
+    80%  { color: rgba(32,40,70,0.6);        opacity: 1 }
+    90%  { color: rgba(32,40,70,0.8);    opacity: 1 }
+    100% { color: rgba(32,40,70,0.9);        opacity: 1 }
 }
 @keyframes send-indicator {
     0%   { transform: scale(0.1);  opacity: 1 }
@@ -176,6 +188,7 @@ form.chat-input input[type="submit"].sent-indicator {
     opacity: 0;
     background: rgba(144,134,251,0.97);
     width: 42px;
+    height: 42px;
     height: 42px;
 }
 form.chat-input input[type="submit"].sending {

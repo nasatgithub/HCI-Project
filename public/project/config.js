@@ -13,7 +13,7 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
-            .when("/qna/:uid/chat", {
+            .when("/qna/:uid/chat/:chatType", {
                 templateUrl: "views/angular-chatbox/chat.view.client.html",
                 controller: "ChatController",
                 controllerAs: "model"
