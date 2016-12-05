@@ -17,16 +17,15 @@
                         return null;
                     }
                     else {
-                        return  UserService
-                            .register(newUser);
+                        return  UserService.register(newUser);
                     }
-                 })
+                })
                 .then(
                     function(response){
                         if(response) {
                             var user = response.data;
-                            if(user) {
-                                $location.url("/profile/"+user._id);
+                            if(user.username === newUser.username) {
+                                $location.url("/home/"+user.username);
                             }
                         }
                         else {
@@ -34,7 +33,7 @@
                         }
                     },
                     function(err) {
-                        vm.error = err;
+                        vm.error = "Unexpected error has occured!! Contact admin";
                     }
                 );
         }

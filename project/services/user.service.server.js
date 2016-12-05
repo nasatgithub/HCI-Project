@@ -33,11 +33,25 @@ module.exports = function(app, models) {
 
 
     function register(req, res) {
+        var id = Date.now();
         var username = req.body.username;
+        var firstName = req.body.firstName;
+        var lastName = req.body.lastName;
         var password = req.body.password;
         var email = req.body.email;
 
-        findUserByUsername(username, res)
+        var newUser = {
+            _id : id,
+            username: username,
+            password: password,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+        }
+
+        users.push(newUser);
+        res.json(users[users.length-1]);
+
     }
 
     function logout(req, res) {
