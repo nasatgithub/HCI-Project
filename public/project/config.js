@@ -18,6 +18,11 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
+            .when("/houses/:uid", {
+                templateUrl: "views/houses/houses.view.client.html",
+                controller: "HousesListController",
+                controllerAs: "model"
+            })
             .when("/qna/:uid/chat/:chatType", {
                 templateUrl: "views/angular-chatbox/chat.view.client.html",
                 controller: "ChatController",
