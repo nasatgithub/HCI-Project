@@ -39,12 +39,12 @@
                 controllerAs: "model"
             })
             .when("/profile", {
-                templateUrl: "views/user/profile.view.client.html",
-                controller: "ProfileController",
-                controllerAs: "model",
-                resolve: {
-                    loggedIn: checkLoggedIn
-                }
+                templateUrl: "views/user/profile.view.client.html"
+
+            })
+            .when("/profile1", {
+                templateUrl: "views/user/profile1.view.client.html"
+
             })
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",
