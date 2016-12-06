@@ -41,8 +41,8 @@
     <h3 class="section-heading text-center" id="homeHeading">Search criteria</h3>
     <hr>
     <div id="search_block" class="panel-body">
-        <form role="form" class="form-horizontal">
-            <div class="form-group">
+        <div>
+            <div class="row">
                 <div class="control-label">
                 <label class="col-xs-10 col-sm-2 col-md-1 control-label" for="v_search">Search:</label>
                 </div>
@@ -53,18 +53,20 @@
                     <button class="btn btn-primary" ng-click="model.housesList()" value="search" name="search">Search</button>
                     <button class="btn btn-default" value="reset" name="reset" type="reset">Reset</button>
                 </div>
+            </div>
                 <br/>
                 <br/>
-                <div>
+
+            <div class="row">
                 <div class="control-label">
                     <label class="col-xs-10 col-sm-2 col-md-1 control-label" for="filters">Price:</label>
                 </div>
                 <div class="col-xs-10 col-sm-8 col-md-4" id="filters">
                     <select class="form-control"  name="section_id" ng-model="model.price">
                         <option value="all"> Any Price </option>
-                        <option value="all"> < $100,000</option>
-                        <option value="all"> < $1,000,000</option>
-                        <option value="all"> < $10,000,000</option>
+                        <option value="hun"> < $100,000</option>
+                        <option value="tho"> < $1,000,000</option>
+                        <option value="mil"> < $10,000,000</option>
                     </select>
                 </div>
                 <div class="control-label">
@@ -72,14 +74,14 @@
                 </div>
                 <div class="col-xs-10 col-sm-8 col-md-2" id="rooms">
                     <select class="form-control" name="section_id" ng-model="model.room">
-                        <option value="all"> 1 Bed Room </option>
-                        <option value="all"> 2 Bed Rooms </option>
-                        <option value="all"> 3 or more Bed Rooms </option>
+                        <option value="1b"> 1 Bed Room </option>
+                        <option value="2b"> 2 Bed Rooms </option>
+                        <option value="3b"> 3 or more Bed Rooms </option>
                     </select>
                 </div>
                 </div>
-            </div>
-        </form>
+        </div>
+
     </div>
 
 
@@ -137,7 +139,7 @@
     </div>
 <br/>
 
-    <div ng-show="false" class="row no-gutter popup-gallery" id="search1">
+    <div ng-if="model.housesDiv==1" class="row no-gutter popup-gallery" ng-model="model.search1">
         <div class="row">
             <h4 style="color: #eb3812">Other houses:</h4>
         </div>
@@ -203,7 +205,7 @@
         </div>
     </div>
 
-    <div ng-show="false" class="row no-gutter popup-gallery" id="search2">
+    <div ng-if="model.housesDiv==2" class="row no-gutter popup-gallery" id="search2">
         <div class="row">
             <h4 style="color: #eb3812">Other houses:</h4>
         </div>
@@ -240,7 +242,7 @@
 
     </div>
 
-    <div ng-show="true" class="row no-gutter popup-gallery" id="search3">
+    <div ng-if="model.housesDiv==3" class="row no-gutter popup-gallery" id="search3">
         <div class="row ">
             <div class="col-lg-3 col-sm-6 col-xs-10 ">
                 <h6 style="color: #eb3812">Other houses:</h6>
