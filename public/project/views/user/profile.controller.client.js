@@ -31,12 +31,10 @@
         }
 
         function next(pageNo){
-            alert("Next Page is :"+pageNo);
             vm.currentPage = pageNo;
         }
 
         function back(pageNo){
-            alert("Previous Page is :"+pageNo);
             vm.currentPage = pageNo;
         }
     }
