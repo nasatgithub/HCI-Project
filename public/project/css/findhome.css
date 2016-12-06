@@ -440,10 +440,14 @@ body {
 
 
 .panel-link .panel:hover{
-  background-color: rgba(176, 176, 176, 0.39);
+  background-color: rgba(214, 214, 214, 0.39);
   text-decoration: none;
 }
 
 .text-muted {
   font-size: 15px;
+}
+
+.panel-default {
+    border-color: rgba(240, 95, 64, 0.71);
 }
