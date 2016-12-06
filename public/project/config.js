@@ -49,13 +49,10 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
-            .when("/profile", {
-                templateUrl: "views/user/profile.view.client.html"
-
-            })
-            .when("/profile1", {
-                templateUrl: "views/user/profile1.view.client.html"
-
+            .when("/profile/:uName", {
+                templateUrl: "views/user/profile.view.client.html",
+                controller: "ProfileController",
+                controllerAs: "model"
             })
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",
