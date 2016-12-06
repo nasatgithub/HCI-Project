@@ -79,12 +79,18 @@
             var url = "/api/user?username="+username;
             return $http.get(url);
         }
-        function findProfileDetails() {
-            return profile;
+        function findProfileDetails(uName) {
+
+            for(var i=0; i < profiles.length; i++){
+                if(profiles[i].uName == uName){
+                    return profiles[i];
+                }
+            }
+
         }
 
         function addProfileToArr(profile) {
-            newProfile = {"uname": profile.uname,
+            newProfile = {"uName": profile.uName,
                 "age":profile.age,
                 "annualIncome":profile.annualIncome,
                 "savings":profile.savings,
