@@ -435,3 +435,28 @@ body {
   padding-top: 50px;
   text-align: justify;
 }
+
+.panel-link {
+  display: block;
+  text-decoration: none;
+}
+
+.panel-link:hover{
+  display: block;
+  text-decoration: none;
+}
+
+
+
+.panel-link .panel:hover{
+  background-color: rgba(214, 214, 214, 0.39);
+  text-decoration: none;
+}
+
+.text-muted {
+  font-size: 15px;
+}
+
+.panel-default {
+    border-color: rgba(240, 95, 64, 0.71);
+}
