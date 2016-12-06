@@ -10,7 +10,7 @@
         vm.logout = logout;
 
         var username = $routeParams.uName;
-
+        vm.uName = username;
         function init() {
             UserService
                 .findUserByUsername(username)
