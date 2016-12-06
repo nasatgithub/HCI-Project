@@ -54,6 +54,11 @@
                 controller: "ProfileController",
                 controllerAs: "model"
             })
+            .when("/profileSummary/:uName", {
+                templateUrl: "views/user/profileSummary.view.client.html",
+                controller: "ProfileSummaryController",
+                controllerAs: "model"
+            })
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",
                 controller: "WebsiteListController",
