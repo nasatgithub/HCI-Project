@@ -425,3 +425,21 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+
+.panel-link {
+  display: block;
+  text-decoration: none;
+}
+
+.panel-link:hover{
+  display: block;
+  text-decoration: none;
+}
+
+
+
+.panel-link .panel:hover{
+  background-color: rgba(176, 176, 176, 0.39);
+  text-decoration: none;
+}
