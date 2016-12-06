@@ -84,7 +84,7 @@
         }
 
         function addProfileToArr(profile) {
-            newProfile = {"uname": profile.uname,
+            newProfile = {"uName": profile.uName,
                 "age":profile.age,
                 "annualIncome":profile.annualIncome,
                 "savings":profile.savings,

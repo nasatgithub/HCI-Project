@@ -41,7 +41,7 @@
     <h3 class="section-heading text-center" id="homeHeading">Search criteria</h3>
     <hr>
     <div id="search_block" class="panel-body">
-        <form role="form" class="form-horizontal" method="post" action="">
+        <form role="form" class="form-horizontal">
             <div class="form-group">
                 <div class="control-label">
                 <label class="col-xs-10 col-sm-2 col-md-1 control-label" for="v_search">Search:</label>
@@ -50,7 +50,7 @@
                     <input placeholder="Enter Search Keywords" value="" ng-model="model.searchText" name="v_search" id="v_search" class="form-control" type="text">
                 </div>
                 <div class="col-xs-10 col-sm-8 col-md-2">
-                    <button class="btn btn-primary" ng-click="model.housesList()" value="search" name="search" type="submit">Search</button>
+                    <button class="btn btn-primary" ng-click="model.housesList()" value="search" name="search">Search</button>
                     <button class="btn btn-default" value="reset" name="reset" type="reset">Reset</button>
                 </div>
                 <br/>
