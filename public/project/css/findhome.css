@@ -443,3 +443,7 @@ body {
   background-color: rgba(176, 176, 176, 0.39);
   text-decoration: none;
 }
+
+.text-muted {
+  font-size: 15px;
+}
