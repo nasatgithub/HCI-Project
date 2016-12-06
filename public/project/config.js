@@ -24,7 +24,7 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
-            .when("/houses/:uid", {
+            .when("/home/:uName/houses", {
                 templateUrl: "views/houses/houses.view.client.html",
                 controller: "HousesListController",
                 controllerAs: "model"

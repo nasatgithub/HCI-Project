@@ -12,7 +12,7 @@
         vm.housesList=housesList;
         function housesList(){
             console.log("in func");
-            return 1;
+
         }
 
     }
