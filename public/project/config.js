@@ -18,6 +18,11 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
+            .when("/houses/:uid", {
+                templateUrl: "views/houses/houses.view.client.html",
+                controller: "HousesListController",
+                controllerAs: "model"
+            })
             .when("/qna/:uid/chat/:chatType", {
                 templateUrl: "views/angular-chatbox/chat.view.client.html",
                 controller: "ChatController",
@@ -39,12 +44,12 @@
                 controllerAs: "model"
             })
             .when("/profile", {
-                templateUrl: "views/user/profile.view.client.html",
-                controller: "ProfileController",
-                controllerAs: "model",
-                resolve: {
-                    loggedIn: checkLoggedIn
-                }
+                templateUrl: "views/user/profile.view.client.html"
+
+            })
+            .when("/profile1", {
+                templateUrl: "views/user/profile1.view.client.html"
+
             })
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",

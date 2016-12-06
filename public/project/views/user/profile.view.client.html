@@ -1,86 +1,132 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+
+<style>
+    body {
+        padding-top: 40px;
+    }
+    @media (max-width: 980px) {
+        body {
+            padding-top: 10px;
+        }
+    }
+
+    .profile-header{
+        color:rgb(250, 171, 7);
+    }
+</style>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Profile
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+
+
+            <a class="pull-left navbar-brand page-scroll" href="#/">
+                <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
             </a>
-            <p class="navbar-text pull-right">
-                <a ng-click="model.updateUser(model.user)" class="navbar-link">
-                  <span class="glyphicon glyphicon-ok">
-                  </span>
-                </a>
-            </p>
+
+            <a class="navbar-brand page-name page-scroll" href="#/">Home</a>
         </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
+                </li>
+                <!-- <li>
+                     <a class="page-scroll" href="#contact">Contact</a>
+                 </li>-->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
 </nav>
 
+
+
+
+<div class="jumbotron col-sm-12">
+    <div>
+        <h2 class="text-center profile-header">Set up Profile</h2>
+    </div>
     <div class="container">
-
-        <div ng-if="model.success" class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Success!</strong> {{model.success}}
-        </div>
-
-        <div ng-if="model.error" class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Error!</strong> {{model.error}}
-        </div>
-
         <form>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input ng-model="model.user.username"
-                       type="text"
-                       class="form-control"
-                       id="username"
-                       placeholder="Username">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input ng-model="model.user.email"
-                       type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
-            </div>
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input ng-model="model.user.firstName" type="text" class="form-control" id="first-name" placeholder="Alice">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input ng-model="model.user.lastName" type="text" class="form-control" id="last-name" placeholder="Wonderland">
-            </div>
-        </form>
-
-        <a class="btn btn-primary btn-block"
-           href="#/user/{{model.user._id}}/website">Websites</a>
-        <a ng-click="model.logout()" class="btn btn-danger  btn-block">Logout</a>
-        <a ng-click="model.unregister()" class="btn btn-danger  btn-block">
-            Unregister
-        </a>
-    </div>
-
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <div class="row navbar-text">
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-star"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-heart"></span>
-                </a>
-            </div>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text"  id="name">
         </div>
     </div>
-</nav>
+
+    <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number"  id="age">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="annual_income" class="col-sm-2 col-form-label">Current Annual Income from all sources ($)</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number"  id="annual_income">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="savings" class="col-sm-2 col-form-label">Total Savings from all sources ($)</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number"  id="savings">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="credit_score" class="col-sm-2 col-form-label"> Current credit score</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number"  min="300" max="850" id="credit_score">
+        </div>
+    </div>
+
+    <div class="form-group row">
+    <label for="loan_repayment_year" class="col-sm-12 col-form-label">Feasible loan repayment term </label>
+    </div>
+
+    <div class="form-group row">
+        <label for="loan_repayment_year" class="col-sm-2 col-form-label"> Year</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number" min="0" max="35"  id="loan_repayment_year">
+        </div>
+
+    </div>
+
+
+    <div class="form-group row">
+        <label for="loan_repayment_month" class="col-sm-2 col-form-label">Month </label>
+        <div class="col-sm-4">
+            <input class="form-control" type="number" min="0" max="12"  id="loan_repayment_month">
+        </div>
+
+    </div>
+
+
+
+
+    <div class="form-group row">
+        <label for="nonearning_members" class="col-sm-2 col-form-label">Total number of non earning members and children </label>
+        <div class="col-sm-10">
+            <input class="form-control" type="number"  id="nonearning_members">
+        </div>
+    </div>
+
+
+                <div class="text-right">
+                    <button type="submit" class=" btn btn-success">Next</button>
+                </div>
+
+
+        </form>
+    </div>
+
+</div>
