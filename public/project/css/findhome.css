@@ -427,13 +427,26 @@ body {
 }
 
 .alert-heading{
-  padding-top: 20%;
+    padding-top: 40px;
   text-align: center;
 }
 
 .alert-list{
   padding-top: 50px;
   text-align: justify;
+}
+
+.houseDetail-heading{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.houseDetail-image{
+    width: 100%;
+    height: 50%;
+}
+.houseDetail-buttons{
+    margin: 10px;
 }
 
 .panel-link {

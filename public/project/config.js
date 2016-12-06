@@ -16,6 +16,9 @@
             .when("/home/:uName/alerts", {
                 templateUrl: "views/alerts/userAlert.view.client.html"
             })
+            .when("/home/:uName/houseDetails", {
+                templateUrl: "views/houses/houseDetail.view.client.html"
+            })
             .when("/qna/:uid", {
                 templateUrl: "views/qna/questions-list.view.client.html",
                 controller: "QuestionListController",
