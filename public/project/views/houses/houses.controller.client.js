@@ -11,7 +11,7 @@
         vm.userId = $routeParams.userId;
         vm.housesList=housesList;
         function housesList(){
-            console.log(vm.room);
+            console.log("in func");
             return 1;
         }
 
