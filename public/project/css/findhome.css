@@ -425,3 +425,13 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+.alert-heading{
+  padding-top: 20%;
+  text-align: center;
+}
+
+.alert-list{
+  padding-top: 50px;
+  text-align: justify;
+}
