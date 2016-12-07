@@ -64,8 +64,8 @@
             <div class="col-lg-12 input-group">
                 <form id="loginForm" name="loginForm"  role="form" style="display: block;" novalidate>
 
-                <input type="text" id="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ..." required>
-                    <div ng-show="loginForm.$submitted && loginForm.form-control.$invalid" class="elementErrorMsg">
+                <input type="text" id="qasked" name="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ..." required>
+                    <div ng-show="loginForm.$submitted && loginForm.qasked.$invalid" class="elementErrorMsg">
                         <span>*required field</span>
                     </div>
                 </form>
@@ -79,12 +79,12 @@
             <div class="col-lg-4">
                 Tags:
                 <select id="tags" multiple="multiple">
-                    <option value="cheese">Cheese</option>
-                    <option value="tomatoes">Tomatoes</option>
-                    <option value="mozarella">Mozzarella</option>
-                    <option value="mushrooms">Mushrooms</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="onions">Onions</option>
+                    <option value="cheese">Money</option>
+                    <option value="tomatoes">Housing</option>
+                    <option value="mozarella">Classes</option>
+                    <option value="mushrooms">Bankers</option>
+                    <option value="pepperoni">Lawyers</option>
+                    <option value="onions">Mentors</option>
                 </select>
             </div>
         </div>

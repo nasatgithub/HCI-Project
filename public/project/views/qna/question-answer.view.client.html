@@ -86,9 +86,10 @@
 
                                 <textarea class="form-control"
                                           id="answerArea"
+                                          name="answerArea"
                                           rows="3"
                                           ng-model="model.answer" required>
-                                    <div ng-show="loginForm.$submitted && loginForm.form-control.$invalid" class="elementErrorMsg">
+                                    <div ng-show="loginForm.$submitted && loginForm.answerArea.$invalid" class="elementErrorMsg">
                                         <span>*required field</span>
                                     </div>
                                 </textarea>
