@@ -1,5 +1,12 @@
 
-
+<script>
+    $(function() {
+        $('#toggle-two').bootstrapToggle({
+            on: 'On',
+            off: 'Off'
+        });
+    })();
+</script>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,8 +87,6 @@
                         <option > Condo </option>
                         <option > TownHomes </option>
                     </select>
-
-
                 </div>-->
                 </div>
             <br/>
@@ -89,21 +94,27 @@
                 <label class="control-label">
                      &nbsp;&nbsp; </label>
                     <label class="checkbox-inline btn btn-default">
-                            <input type="checkbox" value="SmokeFree" ng-model="model.SmokeFree">Smoke-Free
+                            <input type="checkbox" value="SmokeFree" ng-model="model.SmokeFree"> &nbsp;Smoke-Free
                     </label>
                     <label class="checkbox-inline btn btn-default">
-                        <input type="checkbox" value="PetF" ng-model="model.PetF">Pet-Friendly
+                        <input type="checkbox" value="PetF" ng-model="model.PetF"> &nbsp;Pet-Friendly
                     </label>
                     <label class="checkbox-inline btn btn-default">
-                        <input type="checkbox" value="Access" ng-model="model.Access">Wheelchair Accessible
+                        <input type="checkbox" value="Access" ng-model="model.Access"> &nbsp;Wheelchair Accessible
                     </label>
                     <label class="checkbox-inline btn btn-default">
-                        <input type="checkbox" value="Child" ng-model="model.Child">Child-Friendly
+                        <input type="checkbox" value="Child" ng-model="model.Child"> &nbsp;Child-Friendly
                     </label>
             </div>
     </div>
 
+    <div ng-if="model.sugDiv > 0" class="row" >
+        <label class="control-label">
+            &nbsp; &nbsp; Set alerts for this search <input type="checkbox" id="toggle-two">
+        </label>
 
+    </div>
+    <br/>
     <div ng-if="model.sugDiv==1" class="row no-gutter popup-gallery" id="model.searchSuggested">
         <div class="row ">
             <div class="col-lg-3 col-sm-6 col-xs-10 ">
