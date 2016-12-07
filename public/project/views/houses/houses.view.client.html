@@ -48,7 +48,7 @@
                     <button class="btn btn-default" value="reset" name="reset" type="reset">Reset</button>
                 </div>
             </div>
-                <br/>
+            <br/>
             <div class="row">
                 <div class="control-label">
                     <label class="col-xs-10 col-sm-2 col-md-1 control-label" for="filters">Price:</label>
@@ -101,9 +101,7 @@
                         <input type="checkbox" value="Child" ng-model="model.Child">Child-Friendly
                     </label>
             </div>
-
     </div>
-
 
 
     <div ng-if="model.sugDiv==1" class="row no-gutter popup-gallery" id="model.searchSuggested">
@@ -123,7 +121,35 @@
                 <div class="panel-footer"> $480,000 Condo</div>
             </div>
     </div>
-<br/>
+    <div ng-if="model.sugDiv==2" class="row no-gutter popup-gallery">
+        <div class="row ">
+            <div class="col-lg-3 col-sm-6 col-xs-10 ">
+                <h6 style="color: #eb3812"> Suggested houses:</h6>
+            </div>
+        </div>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">492 Beacon St</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/portfolio/thumbnails/h3.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $480,000 Condo</div>
+        </div>
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">66 Orchard St # 2</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/3bOrchard.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $799,000 5 beds, 2 baths, 2374 sqft</div>
+        </div>
+
+    </div>
+
+    <br/>
 
     <div ng-if="model.housesDiv==1" class="row no-gutter popup-gallery" ng-model="model.search1">
         <div class="row">
@@ -172,39 +198,26 @@
 
     <div ng-if="model.housesDiv==2" class="row no-gutter popup-gallery" id="search2">
         <div class="row">
-            <h4 style="color: #eb3812">Other houses:</h4>
+            <h6 style="color: #eb3812">Other houses:</h6>
         </div>
-        <div class="col-lg-3 col-sm-5">
-            <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-                <img src="img/portfolio/thumbnails/h1.jpg" class="img-responsive" alt="">
-                <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                        <div class="project-category text-faded">
-                            175 Hemenway Street
-                        </div>
-                        <div class="project-name">
-                            $1,500,000 1BHK
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">47 Lopez St APT 4</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/2bLopez.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $479,000  2 beds, 1 bath, 897 sqft</div>
         </div>
-        <div class="col-lg-3 col-sm-5">
-            <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                <img src="img/portfolio/thumbnails/h2.jpg" class="img-responsive" alt="">
-                <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                        <div class="project-category text-faded">
-                            231 Boylston Street
-                        </div>
-                        <div class="project-name">
-                            $2,000,000 Condo
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">7 Iroquois, Mission Hill</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/2bIri.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $899,000 2 beds, 2 bath</div>
         </div>
-
     </div>
 
     <div ng-if="model.housesDiv==3" class="row no-gutter popup-gallery" id="search3">
@@ -213,38 +226,112 @@
                 <h6 style="color: #eb3812">Other houses:</h6>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-xs-10 ">
-            <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                <img src="img/portfolio/thumbnails/h2.jpg" class="img-responsive" alt="">
-                <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                        <div class="project-category text-faded">
-                            231 Boylston Street
-                        </div>
-                        <div class="project-name">
-                            $2,000,000 Condo
-                        </div>
-                    </div>
-                </div>
-            </a>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">4 Westminster Ave # 1</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/hunt3bWestminster.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $399,900 3 beds,1 bath, 1454 sqft</div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-xs-10 ">
-            <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
-                <img src="img/portfolio/thumbnails/h3.jpg" class="img-responsive" alt="">
-                <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                        <div class="project-category text-faded">
-                            492 Beacon St
-                        </div>
-                        <div class="project-name">
-                            $1,500,000 Condo
-                        </div>
-                    </div>
-                </div>
-            </a>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">2967B Washington St # 8</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/3bWash.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $1,005,000 3 beds, 3 baths, 1443 sqft</div>
+        </div>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">66 Orchard St # 2</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/3bOrchard.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $799,000 5 beds, 2 baths, 2374 sqft</div>
+        </div>
+
+    </div>
+
+
+    <div ng-if="model.housesDiv==4" class="row no-gutter popup-gallery" id="search4">
+        <div class="row ">
+            <div class="col-lg-3 col-sm-6 col-xs-10 ">
+                <h6 style="color: #eb3812">Other houses:</h6>
+            </div>
+        </div>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">4 Westminster Ave # 1</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/hunt3bWestminster.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $399,900 3 beds,1 bath, 1454 sqft</div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">175 Hemenway Street</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/portfolio/thumbnails/h1.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $500,000 1BHK</div>
+        </div>
+    </div>
+
+    <div ng-if="model.housesDiv==5" class="row no-gutter popup-gallery" id="search5">
+        <div class="row ">
+            <div class="col-lg-3 col-sm-6 col-xs-10 ">
+                <h6 style="color: #eb3812">Other houses:</h6>
+            </div>
+        </div>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">7 Iroquois, Mission Hill</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/2bIri.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $899,000 2 beds, 2 bath</div>
+        </div>
+
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">66 Orchard St # 2</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/3bOrchard.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $799,000 5 beds, 2 baths, 2374 sqft</div>
         </div>
     </div>
 
 
+    <div ng-if="model.housesDiv==6" class="row no-gutter popup-gallery" id="search6">
+        <div class="row ">
+            <div class="col-lg-3 col-sm-6 col-xs-10 ">
+                <h6 style="color: #eb3812">Other houses:</h6>
+            </div>
+        </div>
+        <div class="panel panel-default col-lg-3 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">2967B Washington St # 8</h3>
+            </div>
+            <div class="panel-body">
+                <img src="img/3bWash.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="panel-footer"> $1,005,000 3 beds, 3 baths, 1443 sqft</div>
+        </div>
+    </div>
 </div>
 </section>
