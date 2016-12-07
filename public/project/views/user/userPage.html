@@ -25,13 +25,10 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
-                <li>
-                    <a href="#login">Login</a>
-                </li>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{model.user.firstName}}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                        <li><a href="#/profile/{{model.uName}}">Set Profile <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#/">LOG OUT! <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                     </ul>
@@ -99,7 +96,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 text-center">
-                    <a class="panel-link" href="#/qna/123" style="display: block">
+                    <a class="panel-link" href="#/qna/{{model.user.username}}" style="display: block">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="service-box">

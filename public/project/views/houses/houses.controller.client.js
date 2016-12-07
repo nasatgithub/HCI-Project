@@ -12,6 +12,7 @@
         vm.housesDiv= 0;
         vm.sugDiv=0;
         vm.housesList=housesList;
+        vm.uName = $routeParams.uName;
         function housesList(){
             vm.sugDiv=1;
             if(vm.room != null || vm.price == null ) {

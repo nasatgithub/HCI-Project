@@ -1,39 +1,30 @@
 
-<style>
-    body {
-        padding-top: 40px;
-    }
-    @media (max-width: 980px) {
-        body {
-            padding-top: 10px;
-        }
-    }
+<head>
+    <!-- Theme CSS -->
+    <link href="css/findhome.css" rel="stylesheet">
+</head>
 
-    .profile-header{
-        color:rgb(250, 171, 7);
-    }
-</style>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
 
 
-            <a class="pull-left navbar-brand page-scroll" href="#/">
+            <a class="pull-left navbar-brand page-scroll" href="#/home/{{model.uName}}">
                 <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
             </a>
 
-            <a class="navbar-brand page-name page-scroll" href="#/">Home</a>
+            <a class="navbar-brand page-name page-scroll" href="#/">Profile</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
+                    <a class="page-scroll" href=""> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
                 </li>
                 <!-- <li>
                      <a class="page-scroll" href="#contact">Contact</a>
@@ -45,128 +36,222 @@
     <!-- /.container-fluid -->
 </nav>
 
-
-
-
-<div ng-if="model.currentPage == 1" class="jumbotron col-sm-12">
-    <div>
-        <h2 class="text-center profile-header">Set up Profile</h2>
-    </div>
-    <div class="container">
-        <form>
-
-
-    <div class="form-group row">
-        <label for="age" class="col-sm-2 col-form-label">Age</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number"  ng-model="model.profile.age" id="age">
+<div class="container">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-heading">Set Profile</h2>
+                    <hr class="primary">
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="annual_income" class="col-sm-2 col-form-label">Current Annual Income from all sources ($)</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number"  ng-model="model.profile.annualIncome" id="annual_income">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="savings" class="col-sm-2 col-form-label">Total Savings from all sources ($)</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number"  ng-model="model.profile.savings" id="savings">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="credit_score" class="col-sm-2 col-form-label"> Current credit score</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number"  min="300" max="850" ng-model="model.profile.creditScore" id="credit_score">
-        </div>
-    </div>
-
-    <div class="form-group row">
-    <label for="loan_repayment_year" class="col-sm-12 col-form-label">Feasible loan repayment term </label>
-    </div>
-
-    <div class="form-group row">
-        <label for="loan_repayment_year" class="col-sm-2 col-form-label"> Year</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number" min="0" max="35"  ng-model="model.profile.repaymentYear" id="loan_repayment_year">
-        </div>
-    </div>
-
-
-    <div class="form-group row">
-        <label for="loan_repayment_month" class="col-sm-2 col-form-label">Month </label>
-        <div class="col-sm-4">
-            <input class="form-control" type="number" min="0" max="12"  ng-model="model.profile.repaymentMonth"  id="loan_repayment_month">
-        </div>
-
-    </div>
+        <div ng-if="model.currentPage == 1" class="col-sm-12">
+            <form>
 
 
 
+                <div class="form-check">
 
-    <div class="form-group row">
-        <label for="nonearning_members" class="col-sm-2 col-form-label">Total number of non earning members and children </label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number"   ng-model="model.profile.nonEarningCount" id="nonearning_members">
-        </div>
-    </div>
+                    <label class="form-check-label">
+                        <div>Gender</div>
+                        <input class="form-check-input" type="radio" name="exampleRadios"  ng-model="model.profile.gender" value="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="exampleRadios" ng-model="model.profile.gender" value="female">
+                        Female
+                    </label>
+                </div>
 
+
+                <div class="form-group row">
+                    <label for="age" class="col-md-2 col-form-label">Age</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number"  ng-model="model.profile.age" id="age">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="annual_income" class="col-md-2 col-form-label">Current Annual Income from all sources ($)</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number"  ng-model="model.profile.annualIncome" id="annual_income">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="savings" class="col-md-2 col-form-label">Total Savings from all sources ($)</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number"  ng-model="model.profile.savings" id="savings">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="credit_score" class="col-md-2 col-form-label"> Current credit score</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number"  min="300" max="850" ng-model="model.profile.creditScore" id="credit_score">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="loan_repayment_year" class="col-md-12 col-form-label">Feasible loan repayment term </label>
+                </div>
+
+                <div class="form-group row">
+                    <label for="loan_repayment_year" class="col-md-2 col-form-label"> Year</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number" min="0" max="35"  ng-model="model.profile.repaymentYear" id="loan_repayment_year">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="loan_repayment_month" class="col-md-2 col-form-label">Month </label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="number" min="0" max="12"  ng-model="model.profile.repaymentMonth"  id="loan_repayment_month">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="nonearning_members" class="col-md-2 col-form-label">Total number of non earning members and children </label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number"   ng-model="model.profile.nonEarningCount" id="nonearning_members">
+                    </div>
+                </div>
 
                 <div class="text-right">
+                    <button class=" btn btn-primary" ng-click="model.next(2)"> Next </button>
+                </div>
+            </form>
+        </div>
 
-                    <button type="submit" class=" btn btn-success" ng-click="model.next(2)"> Next </button>
+        <div ng-if="model.currentPage == 2" class="col-sm-12">
+            <div>
+                <h2 class="text-center profile-header">Enter the most recent employment details</h2>
+            </div>
+            <div class="container">
+                <form>
+                    <div class="form-group row" ng-model="model.newProfile">
+                        <label for="cname" class="col-sm-2 col-form-label">Company Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text"   ng-model="model.profile.companyName" id="cname">
+                        </div>
+                    </div>
 
+                    <div class="form-group row">
+                        <label for="company-startDate" class="col-sm-2 col-form-label">Enter the start Date</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="date" value=""  ng-model="model.profile.companyStartDay" id="company-startDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="c_annual_income" class="col-sm-2 col-form-label">Current Annual Income from the Company ($)</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number"   ng-model="model.profile.companyAnnualIncome" id="c_annual_income">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="text-right">
+                        <button class=" btn btn-default pull-left" ng-click="model.back(1)">Back</button>
+                    </div>
+
+                    <div class="text-right">
+                        <button class=" btn btn-primary" ng-click="model.next(3)"> Next </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <div ng-if="model.currentPage == 3" class="col-sm-12">
+            <form>
+
+
+                <label class="form-check-inline">
+                    <div><u>Are you a first time home buyer? </u></div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option1"> Yes
+                </label>
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option2"> No
+                </label>
+                <br/><br/>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <div>
+                            <u>Check all completed courses:</u>
+                        </div>
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 100:
+                        Introduction to Homeownership
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 100:
+                        Introduction to Homeownership
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 101: How to Buy a Home
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 102: How to Buy a Condo
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 104: How to Buy a Foreclosed Property
+                    </label>
+                </div>
+                <br/><br/>
+
+                <label class="form-check-inline">
+                    <div><u>
+                        Do you have pre approval for first mortgage?
+                         </u>
+                    </div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Yes
+                </label>
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
+                </label>
+
+                <br>
+                <div class="text-right">
+                    <button class=" btn btn-default pull-left" ng-click="model.back(2)">Back</button>
+                </div>
+
+                <div class="text-right">
+                    <a href="#/profileSummary/{{model.profile.uName}}">
+                        <button class=" btn btn-success pull-right" ng-click="model.addProfile()">Done</button>
+                    </a>
                 </div>
 
 
-        </form>
-    </div>
-
-</div>
-
-<div ng-if="model.currentPage == 2" class="jumbotron col-sm-12">
-    <div>
-        <h2 class="text-center profile-header">Enter the most recent employment details</h2>
-    </div>
-    <div class="container">
-        <form>
-            <div class="form-group row" ng-model="model.newProfile">
-                <label for="cname" class="col-sm-2 col-form-label">Company Name</label>
-                <div class="col-sm-10">
-                    <input class="form-control" type="text"   ng-model="model.profile.companyName" id="cname">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="company-startDate" class="col-sm-2 col-form-label">Enter the start Date</label>
-                <div class="col-sm-10">
-                    <input class="form-control" type="date" value=""  ng-model="model.profile.companyStartDay" id="company-startDate">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="c_annual_income" class="col-sm-2 col-form-label">Current Annual Income from the Company ($)</label>
-                <div class="col-sm-10">
-                    <input class="form-control" type="number"   ng-model="model.profile.companyAnnualIncome" id="c_annual_income">
-                </div>
-            </div>
+            </form>
+        </div>
 
 
-            <div class="text-right">
-                <button type="submit" class=" btn btn-success" ng-click="model.back(1)">Back</button>
-            </div>
-
-            <div class="text-right">
-                <a href="#/profileSummary/{{model.profile.uName}}">
-                <button type="submit" class=" btn btn-success" ng-click="model.addProfile()">Done</button>
-                </a>
-            </div>
 
 
-        </form>
-    </div>
 
+
+    </section>
 </div>

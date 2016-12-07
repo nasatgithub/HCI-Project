@@ -9,7 +9,7 @@
     var urlBase = "https://api.api.ai/api/query?v=20150910&query=TEXT&lang=en&sessionId=f2386a58-9db9-45e0-a82c-6b75d1db71bc&timezone=2016-12-03T15:49:46-0500";
     function ChatController($routeParams, Messages, $http) {
         var vm = this;
-        vm.userId = $routeParams.userId;
+        vm.uName = $routeParams.uName;
         vm.chatType = $routeParams.chatType;
         // - - - - - - - - - - - - - - - - - -
         // Message Inbox
@@ -39,8 +39,9 @@
             // - - - - - - - - - - - - - - - - - -
 
             vm.send = function () {
-                Messages.user({name:$routeParams.uid});
+                Messages.user({name:$routeParams.uName});
                 Messages.send({data: vm.textbox});
+                vm.textbox = "";
                 autoScroll();
             }
         }
@@ -49,13 +50,14 @@
             vm.welcome = "Chat With Assistant";
             vm.send = function () {
                 var text = vm.textbox;
+                vm.textbox="";
                 if(text ==null || text.trim()== "")
                     return;
 
                 vm.status = "sending"
-                vm.messages.push({data:vm.textbox, self:true, user:{name:$routeParams.uid}});
+                vm.messages.push({data:text, self:true, user:{name:$routeParams.uName}});
 
-                var url = urlBase.replace("TEXT", vm.textbox);
+                var url = urlBase.replace("TEXT", text);
                 $http
                     .get(url,
                         {headers: {'Authorization': 'Bearer 06a396e8751e4b47a640a97daf1c93cf'}})

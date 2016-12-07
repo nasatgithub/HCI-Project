@@ -12,6 +12,7 @@
         var vm = this;
         vm.profile = {};
         vm.profile.uName = $routeParams.uName;
+        vm.uName = $routeParams.uName;
         vm.addProfile=addProfile;
 
         vm.currentPage=1;
@@ -31,12 +32,10 @@
         }
 
         function next(pageNo){
-            alert("Next Page is :"+pageNo);
             vm.currentPage = pageNo;
         }
 
         function back(pageNo){
-            alert("Previous Page is :"+pageNo);
             vm.currentPage = pageNo;
         }
     }
