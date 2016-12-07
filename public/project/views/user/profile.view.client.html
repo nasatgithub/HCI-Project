@@ -48,6 +48,25 @@
         </div>
         <div ng-if="model.currentPage == 1" class="col-sm-12">
             <form>
+
+
+
+                <div class="form-check">
+
+                    <label class="form-check-label">
+                        <div>Gender</div>
+                        <input class="form-check-input" type="radio" name="exampleRadios"  ng-model="model.profile.gender" value="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="exampleRadios" ng-model="model.profile.gender" value="female">
+                        Female
+                    </label>
+                </div>
+
+
                 <div class="form-group row">
                     <label for="age" class="col-md-2 col-form-label">Age</label>
                     <div class="col-md-10">
@@ -108,7 +127,6 @@
             </form>
         </div>
 
-
         <div ng-if="model.currentPage == 2" class="col-sm-12">
             <div>
                 <h2 class="text-center profile-header">Enter the most recent employment details</h2>
@@ -142,12 +160,98 @@
                     </div>
 
                     <div class="text-right">
-                        <a href="#/profileSummary/{{model.profile.uName}}">
-                        <button class=" btn btn-success pull-right" ng-click="model.addProfile()">Done</button>
-                        </a>
+                        <button class=" btn btn-primary" ng-click="model.next(3)"> Next </button>
                     </div>
+
                 </form>
             </div>
         </div>
+
+
+        <div ng-if="model.currentPage == 3" class="col-sm-12">
+            <form>
+
+
+                <label class="form-check-inline">
+                    <div><u>Are you a first time home buyer? </u></div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option1"> Yes
+                </label>
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option2"> No
+                </label>
+                <br/><br/>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <div>
+                            <u>Check all completed courses:</u>
+                        </div>
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 100:
+                        Introduction to Homeownership
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 100:
+                        Introduction to Homeownership
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 101: How to Buy a Home
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 102: How to Buy a Condo
+                    </label>
+                </div>
+                <br/>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Homebuying 104: How to Buy a Foreclosed Property
+                    </label>
+                </div>
+                <br/><br/>
+
+                <label class="form-check-inline">
+                    <div><u>
+                        Do you have pre approval for first mortgage?
+                         </u>
+                    </div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Yes
+                </label>
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
+                </label>
+
+                <br>
+                <div class="text-right">
+                    <button class=" btn btn-default pull-left" ng-click="model.back(2)">Back</button>
+                </div>
+
+                <div class="text-right">
+                    <a href="#/profileSummary/{{model.profile.uName}}">
+                        <button class=" btn btn-success pull-right" ng-click="model.addProfile()">Done</button>
+                    </a>
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+
+
+
     </section>
 </div>
