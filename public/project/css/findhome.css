@@ -490,3 +490,7 @@ body {
 .panel-default {
     border-color: rgba(240, 95, 64, 0.71);
 }
+
+.btn-secondary:hover {
+    background-color: rgba(228, 88, 63, 0.71);
+}
