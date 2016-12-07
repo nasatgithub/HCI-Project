@@ -48,44 +48,39 @@
 
 
 
-<div class="jumbotron col-sm-12">
+<div ng-if="model.currentPage == 1" class="jumbotron col-sm-12">
     <div>
         <h2 class="text-center profile-header">Set up Profile</h2>
     </div>
     <div class="container">
         <form>
-    <div class="form-group row">
-        <label for="name" class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="text"  id="name">
-        </div>
-    </div>
+
 
     <div class="form-group row">
         <label for="age" class="col-sm-2 col-form-label">Age</label>
         <div class="col-sm-10">
-            <input class="form-control" type="number"  id="age">
+            <input class="form-control" type="number"  ng-model="model.profile.age" id="age">
         </div>
     </div>
 
     <div class="form-group row">
         <label for="annual_income" class="col-sm-2 col-form-label">Current Annual Income from all sources ($)</label>
         <div class="col-sm-10">
-            <input class="form-control" type="number"  id="annual_income">
+            <input class="form-control" type="number"  ng-model="model.profile.annualIncome" id="annual_income">
         </div>
     </div>
 
     <div class="form-group row">
         <label for="savings" class="col-sm-2 col-form-label">Total Savings from all sources ($)</label>
         <div class="col-sm-10">
-            <input class="form-control" type="number"  id="savings">
+            <input class="form-control" type="number"  ng-model="model.profile.savings" id="savings">
         </div>
     </div>
 
     <div class="form-group row">
         <label for="credit_score" class="col-sm-2 col-form-label"> Current credit score</label>
         <div class="col-sm-10">
-            <input class="form-control" type="number"  min="300" max="850" id="credit_score">
+            <input class="form-control" type="number"  min="300" max="850" ng-model="model.profile.creditScore" id="credit_score">
         </div>
     </div>
 
@@ -96,16 +91,15 @@
     <div class="form-group row">
         <label for="loan_repayment_year" class="col-sm-2 col-form-label"> Year</label>
         <div class="col-sm-10">
-            <input class="form-control" type="number" min="0" max="35"  id="loan_repayment_year">
+            <input class="form-control" type="number" min="0" max="35"  ng-model="model.profile.repaymentYear" id="loan_repayment_year">
         </div>
-
     </div>
 
 
     <div class="form-group row">
         <label for="loan_repayment_month" class="col-sm-2 col-form-label">Month </label>
         <div class="col-sm-4">
-            <input class="form-control" type="number" min="0" max="12"  id="loan_repayment_month">
+            <input class="form-control" type="number" min="0" max="12"  ng-model="model.profile.repaymentMonth"  id="loan_repayment_month">
         </div>
 
     </div>
@@ -116,14 +110,60 @@
     <div class="form-group row">
         <label for="nonearning_members" class="col-sm-2 col-form-label">Total number of non earning members and children </label>
         <div class="col-sm-10">
-            <input class="form-control" type="number"  id="nonearning_members">
+            <input class="form-control" type="number"   ng-model="model.profile.nonEarningCount" id="nonearning_members">
         </div>
     </div>
 
 
                 <div class="text-right">
-                    <button type="submit" class=" btn btn-success">Next</button>
+
+                    <button type="submit" class=" btn btn-success" ng-click="model.next(2)"> Next </button>
+
                 </div>
+
+
+        </form>
+    </div>
+
+</div>
+
+<div ng-if="model.currentPage == 2" class="jumbotron col-sm-12">
+    <div>
+        <h2 class="text-center profile-header">Enter the most recent employment details</h2>
+    </div>
+    <div class="container">
+        <form>
+            <div class="form-group row" ng-model="model.newProfile">
+                <label for="cname" class="col-sm-2 col-form-label">Company Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text"   ng-model="model.profile.companyName" id="cname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="company-startDate" class="col-sm-2 col-form-label">Enter the start Date</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="date" value=""  ng-model="model.profile.companyStartDay" id="company-startDate">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="c_annual_income" class="col-sm-2 col-form-label">Current Annual Income from the Company ($)</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="number"   ng-model="model.profile.companyAnnualIncome" id="c_annual_income">
+                </div>
+            </div>
+
+
+            <div class="text-right">
+                <button type="submit" class=" btn btn-success" ng-click="model.back(1)">Back</button>
+            </div>
+
+            <div class="text-right">
+                <a href="#/profileSummary/{{model.profile.uName}}">
+                <button type="submit" class=" btn btn-success" ng-click="model.addProfile()">Done</button>
+                </a>
+            </div>
 
 
         </form>

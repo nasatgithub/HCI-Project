@@ -24,7 +24,7 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
-            .when("/houses/:uid", {
+            .when("/home/:uName/houses", {
                 templateUrl: "views/houses/houses.view.client.html",
                 controller: "HousesListController",
                 controllerAs: "model"
@@ -49,13 +49,15 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
-            .when("/profile", {
-                templateUrl: "views/user/profile.view.client.html"
-
+            .when("/profile/:uName", {
+                templateUrl: "views/user/profile.view.client.html",
+                controller: "ProfileController",
+                controllerAs: "model"
             })
-            .when("/profile1", {
-                templateUrl: "views/user/profile1.view.client.html"
-
+            .when("/profileSummary/:uName", {
+                templateUrl: "views/user/profileSummary.view.client.html",
+                controller: "ProfileSummaryController",
+                controllerAs: "model"
             })
             .when("/user/:userId/website", {
                 templateUrl: "views/website/website-list.view.client.html",

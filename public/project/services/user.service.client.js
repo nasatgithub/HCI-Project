@@ -3,6 +3,13 @@
         .module("WebAppMaker")
         .factory("UserService", UserService);
 
+
+    var profiles = [
+    ];
+
+
+
+
     function UserService($http) {
         var api = {
             createUser: createUser,
@@ -14,7 +21,9 @@
             findUserById: findUserById,
             updateUser: updateUser,
             deleteUser: deleteUser,
-            findUserByUsername: findUserByUsername
+            findUserByUsername: findUserByUsername,
+            findProfileDetails: findProfileDetails,
+            addProfile:addProfileToArr
         };
         return api;
 
@@ -69,6 +78,31 @@
         function findUserByUsername(username) {
             var url = "/api/user?username="+username;
             return $http.get(url);
+        }
+        function findProfileDetails(uName) {
+
+            for(var i=0; i < profiles.length; i++){
+                if(profiles[i].uName == uName){
+                    return profiles[i];
+                }
+            }
+
+        }
+
+        function addProfileToArr(profile) {
+            newProfile = {"uName": profile.uName,
+                "age":profile.age,
+                "annualIncome":profile.annualIncome,
+                "savings":profile.savings,
+                "creditScore":profile.creditScore,
+                "repaymentYear":profile.repaymentYear,
+                "repaymentMonth":profile.repaymentMonth,
+                "nonEarningCount":profile.nonEarningCount,
+                "companyName":profile.companyName,
+                "companyStartDay":profile.companyStartDay,
+                "companyAnnualIncome":profile.companyAnnualIncome};
+            profiles.push(newProfile);
+            console.log(profiles);
         }
     }
 })();
