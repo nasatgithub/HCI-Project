@@ -15,7 +15,6 @@
         vm.uName = $routeParams.uName;
         function housesList(){
             vm.sugDiv=1;
-            console.log(vm.room);
             if(vm.room != null || vm.price == null ) {
                 if (vm.room == "1b") {
                     vm.housesDiv = 1;

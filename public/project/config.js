@@ -16,9 +16,7 @@
             .when("/home/:uName/alerts", {
                 templateUrl: "views/alerts/userAlert.view.client.html"
             })
-            .when("/home/:uName/houseDetails", {
-                templateUrl: "views/houses/houseDetail.view.client.html"
-            })
+
             .when("/qna/:uName", {
                 templateUrl: "views/qna/questions-list.view.client.html",
                 controller: "QuestionListController",
@@ -27,6 +25,11 @@
             .when("/home/:uName/houses", {
                 templateUrl: "views/houses/houses.view.client.html",
                 controller: "HousesListController",
+                controllerAs: "model"
+            })
+            .when("/home/:uName/houseDetails/:hId", {
+                templateUrl: "views/houses/houseDetail.view.client.html",
+                controller: "HouseDetailController",
                 controllerAs: "model"
             })
             .when("/qna/:uName/chat/:chatType", {
