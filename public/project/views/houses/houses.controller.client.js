@@ -43,6 +43,7 @@
                     vm.housesDiv = 6;
                 }
             }
+            console.log(vm.housesDiv);
         }
 
     }
