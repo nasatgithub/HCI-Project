@@ -19,7 +19,7 @@
             .when("/home/:uName/houseDetails", {
                 templateUrl: "views/houses/houseDetail.view.client.html"
             })
-            .when("/qna/:uid", {
+            .when("/qna/:uName", {
                 templateUrl: "views/qna/questions-list.view.client.html",
                 controller: "QuestionListController",
                 controllerAs: "model"
@@ -29,7 +29,7 @@
                 controller: "HousesListController",
                 controllerAs: "model"
             })
-            .when("/qna/:uid/chat/:chatType", {
+            .when("/qna/:uName/chat/:chatType", {
                 templateUrl: "views/angular-chatbox/chat.view.client.html",
                 controller: "ChatController",
                 controllerAs: "model"

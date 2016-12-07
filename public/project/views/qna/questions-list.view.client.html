@@ -12,12 +12,12 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
 
 
-            <a class="pull-left navbar-brand page-scroll" href="#/">
-                    <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
+            <a class="pull-left navbar-brand page-scroll" href="#/home/{{model.uName}}">
+                <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
             </a>
 
             <a class="navbar-brand page-name page-scroll" href="#/">Q&A</a>
@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
+                    <a class="page-scroll" href="#/home/{{model.uName}}"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
                 </li>
                 <!-- <li>
                      <a class="page-scroll" href="#contact">Contact</a>
@@ -55,8 +55,14 @@
     <div class="container">
         <h3 class="section-heading text-center" id="homeHeading">Question and Answers Forum</h3>
         <hr>
+        <div class="row vertical-center-row">
+            <div class="text-center col-md-12 -align-center">
+            <a href="#/qna/{{model.uName}}/chat/group" type="button" class="btn btn-black">Group Chat</a>
+            <a href="#/qna/{{model.uName}}/chat/assistant" type="button" class="btn btn-primary">Chat Assistant</a>
+            </div>
+        </div>
+        <br><br>
         <div class="row">
-
             <div class="input-group">
                 <input type="text" id="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ...">
                 <span class="input-group-btn">

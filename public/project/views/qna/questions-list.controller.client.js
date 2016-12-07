@@ -8,6 +8,8 @@
         vm.userId = $routeParams.userId;
         vm.addQuestion = addQuestion;
 
+        vm.uName = $routeParams.uName;
+
         function init() {
             vm.questions = QnaService
                 .findAllQuestions();

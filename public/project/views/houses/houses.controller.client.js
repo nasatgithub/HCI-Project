@@ -11,6 +11,7 @@
         //vm.userId = $routeParams.userId;
         vm.housesDiv= 0;
         vm.housesList=housesList;
+        vm.uName = $routeParams.uName;
         function housesList(){
             if(vm.room=="1b"){
                 vm.housesDiv = 1;}
