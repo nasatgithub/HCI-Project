@@ -1,7 +1,7 @@
 // IIFE (immediately invoked function expression
 (function(){
     angular
-        .module("WebAppMaker", ["chat","ngRoute","datatables"])
+        .module("WebAppMaker", ["chat","ngRoute"])
         .constant( 'config', {
             "pubnub": {
                 "publish-key"   : "pub-c-21d8d640-14fb-4c3c-b3d9-4fe19615d67f",

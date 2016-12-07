@@ -24,6 +24,11 @@
                 controller: "QuestionListController",
                 controllerAs: "model"
             })
+            .when("/qna/:uName/:qId/answer", {
+                templateUrl: "views/qna/question-answer.view.client.html",
+                controller: "QuestionAnswerController",
+                controllerAs: "model"
+            })
             .when("/home/:uName/houses", {
                 templateUrl: "views/houses/houses.view.client.html",
                 controller: "HousesListController",
