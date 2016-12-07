@@ -12,7 +12,6 @@
         vm.submitAnswer = submitAnswer;
 
         function init() {
-            alert("");
             vm.question = QnaService.findQuestionById(vm.qId);
             if(!vm.question)
                 return;
@@ -34,7 +33,6 @@
                 "helpful": 0
             }
 
-            console.log(ans);
 
             QnaService
                 .submitAnswer(ans);

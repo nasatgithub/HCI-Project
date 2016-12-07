@@ -128,7 +128,6 @@
         
         function submitAnswer(ans) {
             answers.push(ans);
-            alert(answers);
         }
     }
 })();
