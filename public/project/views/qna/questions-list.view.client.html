@@ -62,10 +62,18 @@
         <br><br>
         <div class="row">
             <div class="col-lg-12 input-group">
-                <input type="text" id="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ...">
+                <form id="loginForm" name="loginForm"  role="form" style="display: block;" novalidate>
+
+                <input type="text" id="qasked" ng-model="model.newQuestion" class="form-control" placeholder="Enter New Question ..." required>
+                    <div ng-show="loginForm.$submitted && loginForm.form-control.$invalid" class="elementErrorMsg">
+                        <span>*required field</span>
+                    </div>
+                </form>
                 <span class="input-group-btn">
-                <button id="ask_question" class="btn btn-secondary" type="button" ng-click="model.addQuestion()">Ask Question</button>
+                <button id="ask_question" class="btn btn-secondary" type="button" ng-click="(submitted=true) && loginForm.$valid && model.addQuestion()">Ask Question</button>
                 </span>
+
+
             </div>
             <br>
             <div class="col-lg-4">

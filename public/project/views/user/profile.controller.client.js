@@ -10,6 +10,7 @@
 
     function ProfileController($routeParams, UserService ) {
         var vm = this;
+        //var uName = $routeParams.uName;
         vm.profile = {};
         vm.profile.uName = $routeParams.uName;
         vm.uName = $routeParams.uName;
@@ -21,7 +22,7 @@
 
 
         function init() {
-
+           // vm.profile = UserService.findProfileDetails(uName);
         }
 
         init();
