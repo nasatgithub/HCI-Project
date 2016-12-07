@@ -11,7 +11,7 @@
 
         var vm=this;
         var uName = $routeParams.uName;
-
+        vm.uName = uName;
 
         function findProfileDetails() {
             vm.profile = UserService.findProfileDetails(uName);
