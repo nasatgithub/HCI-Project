@@ -14,7 +14,9 @@
                 controllerAs: "model"
             })
             .when("/home/:uName/alerts", {
-                templateUrl: "views/alerts/userAlert.view.client.html"
+                templateUrl: "views/alerts/userAlert.view.client.html",
+                controller: "AlertsController",
+                controllerAs: "model"
             })
 
             .when("/qna/:uName", {
@@ -35,6 +37,11 @@
             .when("/home/:uName/houseDetails/:hId", {
                 templateUrl: "views/houses/houseDetail.view.client.html",
                 controller: "HouseDetailController",
+                controllerAs: "model"
+            })
+            .when("/qna/:uName/chat/:chatType", {
+                templateUrl: "views/angular-chatbox/chat.view.client.html",
+                controller: "ChatController",
                 controllerAs: "model"
             })
             .when("/qna/:uName/chat/:chatType", {
