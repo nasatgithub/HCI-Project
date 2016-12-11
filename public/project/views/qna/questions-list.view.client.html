@@ -16,10 +16,16 @@
                 <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
 
-
-            <a class="pull-left navbar-brand page-scroll" href="#/home/{{model.uName}}">
-                <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
-            </a>
+            <span ng-if="model.uName!='anonymous_user'">
+                <a class="pull-left navbar-brand page-scroll" href="#/home/{{model.uName}}">
+                    <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
+                </a>
+            </span>
+            <span ng-if="model.uName=='anonymous_user'">
+                <a class="pull-left navbar-brand page-scroll" href="#/">
+                    <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
+                </a>
+            </span>
 
             <a class="navbar-brand page-name page-scroll" href="">Q&A</a>
         </div>
