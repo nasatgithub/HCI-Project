@@ -44,11 +44,6 @@
                 controller: "ChatController",
                 controllerAs: "model"
             })
-            .when("/qna/:uName/chat/:chatType", {
-                templateUrl: "views/angular-chatbox/chat.view.client.html",
-                controller: "ChatController",
-                controllerAs: "model"
-            })
             .when("/flickr", {
                 templateUrl: "views/widget/widget-flickr-search.view.client.html",
                 controller: "FlickrImageSearchController",

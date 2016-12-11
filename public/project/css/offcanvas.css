@@ -13,8 +13,8 @@ footer {
     padding: 40px 0;
 }
 .tags {
-    color: #464646;
-    background-color: rgba(250, 242, 113, 0.89);
+    color: #232323;
+    background-color: rgba(244, 97, 65, 0.88);
 }
 .card-text.question{
     color: #353535;
@@ -70,6 +70,6 @@ footer {
 
     .tags {
         color: #464646;
-        background-color: rgba(250, 242, 113, 0.89);
+        background-color: rgba(244, 97, 65, 0.88);
     }
 }
