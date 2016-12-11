@@ -418,3 +418,7 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+.withPaddingSearch {
+  margin-top: 5px;
+}

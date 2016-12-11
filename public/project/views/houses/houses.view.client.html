@@ -23,9 +23,7 @@
                 <li>
                     <a class="page-scroll" href="#/home/{{model.uName}}"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
                 </li>
-                <!-- <li>
-                     <a class="page-scroll" href="#contact">Contact</a>
-                 </li>-->
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -44,9 +42,9 @@
                 <div class="col-xs-10 col-sm-8 col-md-4">
                     <input placeholder="Enter Search Keywords" value="" ng-model="model.searchText" name="v_search" id="v_search" class="form-control" type="text">
                 </div>
-                <div class="col-xs-10 col-sm-8 col-md-2">
-                    <button class="btn btn-primary" ng-click="model.housesList()" value="search" name="search">Search</button>
-                    <button class="btn btn-default" value="reset" name="reset" type="reset">Reset</button>
+                <div class="col-xs-10 col-sm-8 col-md-4">
+                    <button class="withPaddingSearch btn btn-primary" ng-click="model.housesList()" value="search" name="search">Search</button>
+                    <button class="withPaddingSearch btn btn-default" value="reset" name="reset" type="reset">Reset</button>
                 </div>
             </div>
             <br/>
